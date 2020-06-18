@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'double_tap_plugin'
 
 android {
     compileSdkVersion 29
