@@ -9,7 +9,7 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.0"
-        classpath 'com.zhumingwei.doubleTap:double_tap_plugin:0.1.5-SNAPSHOT'
+        classpath 'com.zhumingwei.doubleTap:double_tap_plugin:0.1.5-SNAPSHOT'//smart replace
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -17,9 +17,6 @@ buildscript {
 
 allprojects {
     repositories {
-         maven {
-             url "file://${rootDir.absolutePath}/.repo"
-         }
         google()
         jcenter()
     }

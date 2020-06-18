@@ -7,7 +7,7 @@ import org.apache.http.util.TextUtils;
  * @date 2020/6/18 09:50
  * @email zhumingwei@bilibili.com
  */
-class DoubleTabConfig {
+public class DoubleTabConfig {
     public String injectClassName = "";
     public String injectFunctionName = "";
 

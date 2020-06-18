@@ -51,7 +51,7 @@ class TimingsListener implements BuildListener, TaskExecutionListener {
     @Override
     void afterExecute(Task task, TaskState taskState) {
         def ms = TimeUnit.MILLISECONDS.convert(System.nanoTime() - startTime, TimeUnit.NANOSECONDS)
-        timings.add(ms,task.path)
+        timings.add([ms,task.path])
         task.project.logger.warn "${task.path} took ${ms}ms"
     }
 }

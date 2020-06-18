@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'double_tap_plugin'
+apply plugin: 'doubleTap' //smart replace
 
 android {
     compileSdkVersion 29
