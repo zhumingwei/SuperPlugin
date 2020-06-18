@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.zhumingwei.doubleTap</groupId>
+  <artifactId>double_tap_plugin</artifactId>
+  <versioning>
+    <versions>
+      <version>0.1.5-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20200618041704</lastUpdated>
+  </versioning>
+</metadata>
