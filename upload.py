@@ -48,8 +48,13 @@ def smartRemoveFile(filename):
 smartAddFile("build.gradle")
 smartAddFile("app/build.gradle")
 
-
+print('start uploadArchives')
 subprocess.call(['./gradlew', 'uploadArchives'])
 
 smartRemoveFile("build.gradle")
 smartRemoveFile("app/build.gradle")
+
+print('start clean')
+subprocess.call(['./gradlew', 'clean'])
+
+print("end")

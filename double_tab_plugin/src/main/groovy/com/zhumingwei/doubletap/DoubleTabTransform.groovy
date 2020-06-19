@@ -8,6 +8,7 @@ import com.android.build.gradle.internal.pipeline.TransformManager
 import com.zhumingwei.doubletap.base.BaseTransform
 import com.zhumingwei.doubletap.base.TransformCallBack
 import org.gradle.api.Project
+import com.zhumingwei.doubletap.base.ClassUtils
 
 class DoubleTabTransform extends Transform {
     Project project

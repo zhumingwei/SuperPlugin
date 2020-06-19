@@ -35,7 +35,7 @@ public abstract class AbstractAsmDelegate {
             byte[] modifiedClassBytes = asmHelper.modifyClass(sourceClassBytes);
             return modifiedClassBytes;
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
         return null;
     }

@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'doubleTap' //smart replace
 
+doubleTab {injectClassName = "com.zhumingwei.comic.superplugin.ClickHelper";injectFunctionName = "canClick"}//smart replace
 
 android {
     compileSdkVersion 29

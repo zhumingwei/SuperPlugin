@@ -1,6 +1,6 @@
 package com.zhumingwei.doubletap.helper
 
-
+import org.codehaus.groovy.runtime.metaclass.MethodHelper
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.FieldVisitor
 import org.objectweb.asm.MethodVisitor
