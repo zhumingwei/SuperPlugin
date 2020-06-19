@@ -1,14 +1,12 @@
 package com.zhumingwei.doubletap
 
-import com.android.build.api.transform.Context
 import com.android.build.api.transform.QualifiedContent;
 import com.android.build.api.transform.Transform
 import com.android.build.api.transform.TransformException
-import com.android.build.api.transform.TransformInput
 import com.android.build.api.transform.TransformInvocation
-import com.android.build.api.transform.TransformOutputProvider
 import com.android.build.gradle.internal.pipeline.TransformManager
-import groovy.util.logging.Log
+import com.zhumingwei.doubletap.base.BaseTransform
+import com.zhumingwei.doubletap.base.TransformCallBack
 import org.gradle.api.Project
 
 class DoubleTabTransform extends Transform {
@@ -39,7 +37,32 @@ class DoubleTabTransform extends Transform {
 
     @Override
     void transform(TransformInvocation transformInvocation) throws TransformException, InterruptedException, IOException {
-        println "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx transform"
-        super.transform(transformInvocation)
+        Log.info("transform")
+        final DoubleTapDelegate injectHelper = new DoubleTapDelegate()
+        BaseTransform baseTransform = new BaseTransform(transformInvocation, new TransformCallBack() {
+
+            @Override
+            byte[] process(String s, byte[] bytes, BaseTransform baseTransform) {
+                if (ClassUtils.checkClassName(s)) {
+                    Log.info("class name : " + s)
+                    return injectHelper.transformByte(bytes)
+                } else {
+                    return null
+                }
+            }
+        })
+        Log.info("startTransform")
+        baseTransform.startTransform()
+    }
+}
+
+class Log {
+
+    def static info(Object msg) {
+        try {
+            println "${msg}"
+        } catch (Exception e) {
+            e.printStackTrace()
+        }
     }
 }
