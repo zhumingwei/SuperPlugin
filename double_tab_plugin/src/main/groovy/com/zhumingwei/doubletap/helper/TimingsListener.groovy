@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit
 
 class TimingsListener implements BuildListener, TaskExecutionListener {
     private long startTime
+    private HashMap<String,Long> startMap = new HashMap<>();
     private timings = []
 
     @Override
@@ -46,10 +47,13 @@ class TimingsListener implements BuildListener, TaskExecutionListener {
     @Override
     void beforeExecute(Task task) {
         startTime = System.nanoTime()
+        startMap.put(task.name,System.nanoTime())
+
     }
 
     @Override
     void afterExecute(Task task, TaskState taskState) {
+        long startTime = startMap.get(task.name)
         def ms = TimeUnit.MILLISECONDS.convert(System.nanoTime() - startTime, TimeUnit.NANOSECONDS)
         timings.add([ms,task.path])
         task.project.logger.warn "${task.path} took ${ms}ms"
