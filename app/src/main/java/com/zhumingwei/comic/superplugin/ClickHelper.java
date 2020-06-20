@@ -8,7 +8,13 @@ import android.util.Log;
  * @email zhumingwei@bilibili.com
  */
 class ClickHelper {
+    public static long lastTime = 0;
     public boolean canClick(){
+        long cur = System.currentTimeMillis();
+        if(cur - lastTime > 500){
+            lastTime = cur;
+            return true;
+        }
         Log.d("xxxxxxxxxxxxxxxxxxxxxx","doubleclick");
         return false;
     }

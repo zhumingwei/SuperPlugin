@@ -16,7 +16,7 @@ import java.util.jar.JarOutputStream;
 import java.util.zip.ZipEntry;
 
 class JarUtils {
-
+    //jarFile modify tempDir
     public static File modifyJarFile(File jarFile, File tempDir, TransformCallBack callBack,
                                      BaseTransform transform) throws IOException {
         /** 设置输出到的jar */
@@ -43,7 +43,7 @@ class JarUtils {
                 try {
                     modifiedClassBytes = callBack.process(entryName, sourceClassBytes, transform);
                 } catch (Exception e) {
-
+                    e.printStackTrace();
                 }
             }
             if (modifiedClassBytes == null) {

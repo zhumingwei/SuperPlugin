@@ -38,26 +38,25 @@ class DoubleTabTransform extends Transform {
 
     @Override
     void transform(TransformInvocation transformInvocation) throws TransformException, InterruptedException, IOException {
-        Log.info("transform")
         final DoubleTapDelegate injectHelper = new DoubleTapDelegate()
         BaseTransform baseTransform = new BaseTransform(transformInvocation, new TransformCallBack() {
 
             @Override
             byte[] process(String s, byte[] bytes, BaseTransform baseTransform) {
                 if (ClassUtils.checkClassName(s) && canUse(s)) {
-                    Log.info("class name : " + s)
+//                    Log.info("class name : " + s)
                     return injectHelper.transformByte(bytes)
                 } else {
                     return null
                 }
             }
         })
-        Log.info("startTransform")
+        Log.info("mytransform startTransform")
         baseTransform.startTransform()
     }
 
     boolean canUse(String s){
-        return ture
+        return true
 //        return !s.startsWith("androidx")
     }
 }

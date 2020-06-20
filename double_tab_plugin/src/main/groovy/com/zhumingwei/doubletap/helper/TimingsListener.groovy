@@ -42,7 +42,7 @@ class TimingsListener implements BuildListener, TaskExecutionListener {
     @Override
     void buildFinished(BuildResult buildResult) {
         def ms = TimeUnit.MILLISECONDS.convert(System.nanoTime() - startTime, TimeUnit.NANOSECONDS)
-        println "print time ${ms}"
+        println "buildFinished: print time ${ms}"
     }
 
     @Override
