@@ -8,9 +8,8 @@ import android.util.Log;
  * @email zhumingwei@bilibili.com
  */
 class ClickHelper {
-
-    public static boolean canClick(){
-        Log.d("xxxxxxxxxxxxxxxxxxxxxx","doubleclick               ");
+    public boolean canClick(){
+        Log.d("xxxxxxxxxxxxxxxxxxxxxx","doubleclick");
         return false;
     }
 }
