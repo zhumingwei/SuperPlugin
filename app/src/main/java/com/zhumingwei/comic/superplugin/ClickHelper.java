@@ -7,7 +7,7 @@ import android.util.Log;
  * @date 2020/6/19 10:43
  * @email zhumingwei@bilibili.com
  */
-class ClickHelper {
+public class ClickHelper {
     public static long lastTime = 0;
     public boolean canClick(){
         long cur = System.currentTimeMillis();

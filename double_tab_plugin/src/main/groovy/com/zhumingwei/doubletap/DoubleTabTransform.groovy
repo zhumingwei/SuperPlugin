@@ -43,7 +43,7 @@ class DoubleTabTransform extends Transform {
 
             @Override
             byte[] process(String s, byte[] bytes, BaseTransform baseTransform) {
-                if (ClassUtils.checkClassName(s) && canUse(s)) {
+                if (ClassUtils.checkClassName(s)) {
 //                    Log.info("class name : " + s)
                     return injectHelper.transformByte(bytes)
                 } else {
@@ -55,10 +55,6 @@ class DoubleTabTransform extends Transform {
         baseTransform.startTransform()
     }
 
-    boolean canUse(String s){
-        return true
-//        return !s.startsWith("androidx")
-    }
 }
 
 class Log {
